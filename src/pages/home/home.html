@@ -14,13 +14,14 @@
 <ion-content padding>
   <ion-card *ngFor="let casa of casas" (click)="info(casa)">
     <!-- {{ nombre | json}} -->
-    <img *ngIf = "casa.hasOwnProperty('imgs')" src= 'casa.imgs[0][0]'>
+    <img *ngIf = "casa.hasOwnProperty('imgs')" src= "{{casa.imgs[0][0]}}">
     <ion-card-header >
       <!-- {{ casa.ad.list_price.label }} -->
-      {{ casa.titulo }}
+      {{ casa.precio }}
     </ion-card-header>
-    <ion-card-content >
+    <ion-card-content *ngIf = "casa.hasOwnProperty('titulo')">
       <!-- {{ casa.ad.subject }} -->
+      {{ casa.titulo }}
     </ion-card-content>
   </ion-card>
 </ion-content>
