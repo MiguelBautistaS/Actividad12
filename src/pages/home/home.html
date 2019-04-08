@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Bienes raices
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="search()">
+        <ion-icon name = "search"></ion-icon>
+      </button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let casa of casas" (click)="info(casa)">
+    <!-- {{ nombre | json}} -->
+    <img *ngIf = "casa.hasOwnProperty('imgs')" src= 'casa.imgs[0][0]'>
+    <ion-card-header >
+      <!-- {{ casa.ad.list_price.label }} -->
+      {{ casa.titulo }}
+    </ion-card-header>
+    <ion-card-content >
+      <!-- {{ casa.ad.subject }} -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>
